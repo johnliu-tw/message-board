@@ -1,0 +1,177 @@
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-01 18:24:27 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (9.8ms)
+Completed 200 OK in 111ms (Views: 90.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (32.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (4.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateTopics (20150401102513)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150401102513"]]
+  [1m[35m (4.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/topics" for 127.0.0.1 at 2015-04-01 18:26:24 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (0.2ms)[0m  SELECT "topics".* FROM "topics"
+  Rendered topics/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 2990ms (Views: 2945.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/scaffolds-2e2d9af287f91f86404b3c246f281c3e.css?body=1" for 127.0.0.1 at 2015-04-01 18:26:28 +0800
+
+
+Started GET "/assets/topics-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-04-01 18:26:28 +0800
+
+
+Started GET "/assets/application-099ad151c4f820c766817967b902db3b.css?body=1" for 127.0.0.1 at 2015-04-01 18:26:28 +0800
+
+
+Started GET "/assets/topics-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-04-01 18:26:28 +0800
+
+
+Started GET "/topics" for 127.0.0.1 at 2015-04-01 18:26:38 +0800
+Processing by TopicsController#index as HTML
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT "topics".* FROM "topics"[0m
+  Rendered topics/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 120ms (Views: 118.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/topics/new" for 127.0.0.1 at 2015-04-01 18:26:56 +0800
+Processing by TopicsController#new as HTML
+  Rendered topics/_form.html.erb (233.9ms)
+  Rendered topics/new.html.erb within layouts/application (267.6ms)
+Completed 200 OK in 427ms (Views: 409.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/topics" for 127.0.0.1 at 2015-04-01 18:27:27 +0800
+Processing by TopicsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kB+eICRXNqmGW3YgvtzEnGnncNsiZiVNSYAg/X1YSBzFtFKag0IHnZzOdCQgrkhX8g5veYFBq+bZpQrvM8nX6A==", "topic"=>{"title"=>"Eating", "description"=>"YA"}, "commit"=>"Create Topic"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (26.7ms)[0m  [1mINSERT INTO "topics" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Eating"], ["description", "YA"], ["created_at", "2015-04-01 10:27:27.188763"], ["updated_at", "2015-04-01 10:27:27.188763"]]
+  [1m[35m (85.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/topics/1
+Completed 302 Found in 137ms (ActiveRecord: 111.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2015-04-01 18:27:27 +0800
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.3ms)[0m  [1mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered topics/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 200ms (Views: 128.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/topics" for 127.0.0.1 at 2015-04-01 18:27:37 +0800
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (0.2ms)[0m  SELECT "topics".* FROM "topics"
+  Rendered topics/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 115ms (Views: 114.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2015-04-01 18:27:44 +0800
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics" WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered topics/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 118ms (Views: 116.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/topics" for 127.0.0.1 at 2015-04-01 18:27:46 +0800
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (0.2ms)[0m  SELECT "topics".* FROM "topics"
+  Rendered topics/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 118ms (Views: 117.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-01 18:31:16 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/railties-4.2.0/lib/rails/templates/rails/welcome/index.html.erb (0.8ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-01 18:34:53 +0800
+Processing by TopicsController#index as HTML
+  [1m[36mTopic Load (0.8ms)[0m  [1mSELECT "topics".* FROM "topics"[0m
+  Rendered topics/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 241ms (Views: 237.1ms | ActiveRecord: 1.1ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateVotes (20150401151846)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (21.4ms)[0m  [1mCREATE TABLE "votes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "topic_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20150401151846"]]
+  [1m[36m (19.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "topics"[0m
+  [1m[35mTopic Load (0.4ms)[0m  SELECT  "topics".* FROM "topics"  ORDER BY "topics"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (34.1ms)[0m  UPDATE "topics" SET "title" = ?, "updated_at" = ? WHERE "topics"."id" = ?  [["title", "Edited in the console"], ["updated_at", "2015-04-01 15:22:57.966785"], ["id", 1]]
+  [1m[36m (23.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (10.1ms)[0m  [1mINSERT INTO "votes" ("topic_id", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["topic_id", 1], ["created_at", "2015-04-01 15:25:10.095619"], ["updated_at", "2015-04-01 15:25:10.095619"]]
+  [1m[35m (20.6ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."topic_id" = ?[0m  [["topic_id", 1]]
+  [1m[35mVote Load (0.2ms)[0m  SELECT  "votes".* FROM "votes" WHERE "votes"."topic_id" = ?  ORDER BY "votes"."id" ASC LIMIT 1  [["topic_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = ?  [["id", 1]]
+  [1m[36m (42.9ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/sandwich" for 127.0.0.1 at 2015-04-02 11:50:30 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/sandwich"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /home/john/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/john/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/john/.rvm/rubies/ruby-2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (62.2ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (32.5ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (163.3ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (32.2ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (4.8ms)
+  Rendered /home/john/.rvm/gems/ruby-2.1.5/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (77.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-04-02 11:53:19 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (0.2ms)[0m  SELECT "topics".* FROM "topics"
+  [1m[36m (12.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered topics/index.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 491ms (Views: 366.0ms | ActiveRecord: 13.1ms)
